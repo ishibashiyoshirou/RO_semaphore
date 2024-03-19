@@ -50,7 +50,7 @@ void task_c_in(VP_INT exinf)
 	while(1){
 		dly_tsk(rand()%1000); /*待ち状態(0～999ms)*/
 		count_b++;
-		syslog(LOG_INFO,"車が来ました。",count_b,count_a);
+		syslog(LOG_INFO,"車が来ました。");
 		wup_tsk(TASK_P_IN);
 	}
 	ext_tsk();
@@ -62,7 +62,7 @@ void task_c_out(VP_INT exinf)
 	syslog(LOG_INFO, "Task_Car_Out Start");
 	while(1){
 		dly_tsk(rand()%2000); /*待ち状態(0～1999ms)*/
-		syslog(LOG_INFO,"車が出ます",count_b,count_a);
+		syslog(LOG_INFO,"車が出ます。");
 		wup_tsk(TASK_P_OUT);
 	}
 	ext_tsk();
